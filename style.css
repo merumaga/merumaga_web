@@ -1,0 +1,33 @@
+*{
+  margin: 0 ;
+  padding: 0 ;
+}
+html{
+  color: black;
+}
+
+table{
+  border-collapse: collapse;
+  width:100%;
+}
+tr{
+  width:100%;
+  height: auto;
+  background-color:white;
+  border-top: 1px solid #868686;
+
+}
+tr:active{
+  background-color:rgb(157, 157, 157)
+}
+
+td:first-child{
+  width: 150px;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+a:visited{
+  color: black;
+}

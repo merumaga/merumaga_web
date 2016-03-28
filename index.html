@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>expa</title>
+	<link rel="stylesheet" href="style.css"type="text/css">
+ </head>
+ <body>
+  <h1>メルマガ</h1>
+  <div id="page"></div>
+
+	<div id="wrapper">
+		<div class="contents">
+			<table>
+				<tbody>
+					<a class="con_tr" href="page.html"></a>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<script>
+
+$(function() {
+	var con_url = "bkn32112/test";//個人のurl//
+		$.ajax({
+			url: "http://gaze-ex.jp/"+con_url,
+			type: 'GET',
+			success: function(data) {
+
+				$('#page').html($(data).find('.header').text());
+				$('.con_tr').html($(data).find('tbody > tr'));
+				$("a").attr("href", "page.html");
+				var tr_length = $("tr").length;
+
+				$("tr").addClass("link");
+				$(".link").click(function () {
+
+					var index = tr_length-$(".link").index(this);
+
+					window.localStorage.setItem("result",index);
+
+				});
+
+			}
+		});
+	});
+
+
+
+	</script>
+ </body>
+</html>

@@ -28,6 +28,8 @@ $(function() {
 		$.ajax({
 			url: "http://gaze-ex.jp/"+con_url,
 			type: 'GET',
+       timeout: 10000,
+      
 			success: function(data) {
 
 				$('#page').html($(data).find('.header').text());

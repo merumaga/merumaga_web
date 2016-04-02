@@ -26,10 +26,10 @@
 	<script>
 
 $(function() {
-	var con_url = "bkn32112/test";//個人のurl//
+
   var number = window.localStorage.getItem("result");
 		$.ajax({
-			url: "http://gaze-ex.jp/"+con_url+"/"+number,
+			url: number,
 			type: 'GET',
 			success: function(data) {
 				$('#title').html($(data).find('.table-backnumber > tbody'));

@@ -8,6 +8,9 @@
 </head>
 
 <body>
+  <div class="re">
+    再度読み込み
+  </div>
   <h1></h1>
 
   <div id="wrapper">
@@ -19,23 +22,19 @@
         <table>
           <tbody class="con_tr">
           </tbody>
-          <tbody class="con_tr2">
-          </tbody>
-          <tbody class="con_tr3">
-          </tbody>
-          <tbody class="con_tr4">
-          </tbody>
         </table>
 
     </div>
   </div>
-  <div class="next"></div>
+  <div class="next">次を読み込む</div>
   <script src="js/ajax.js"></script>
 
 
   <script>
     $(function() {
-
+      $(".re").click(function(){
+        window.location.reload() ;
+      });
 
       $.ajax({
         url: "http://range-ex.com/bkn2359/0008/",
@@ -50,7 +49,10 @@
           $(".next").click(function() {
             count += 1
             if (count <= mal_p) {
-              console.log(count);
+              var tbody = $("<tbody></tbody>");
+              $('table').append(tbody);
+              $("tbody:last").addClass("con_tr"+count);
+
               if (count === mal_p) {
                 $(".next").css("display", "none");
               }
@@ -59,6 +61,14 @@
                 type: "GET",
                 success: function(data) {
                   $(".con_tr" + count).html($(data).find("tbody > tr"))
+                  $("td > a").click(function(e) {
+                    e.preventDefault();
+                    var url = "http://range-ex.com"+$(this).attr('href');
+
+                    window.localStorage.setItem("result", url);
+                    window.location.href = "page.html";
+
+                  });
                 }
               });
 

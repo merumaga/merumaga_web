@@ -6,24 +6,18 @@
   <title>expa</title>
   <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
-
 <body>
   <div class="re">
     再度読み込み
   </div>
   <h1></h1>
-
   <div id="wrapper">
-    <div class="li">
-
-    </div>
+    <div class="li"></div>
     <div class="contents">
-
-        <table>
-          <tbody class="con_tr">
-          </tbody>
-        </table>
-
+      <table>
+        <tbody class="con_tr">
+        </tbody>
+      </table>
     </div>
   </div>
   <div class="next">次を読み込む</div>
@@ -32,8 +26,8 @@
 
   <script>
     $(function() {
-      $(".re").click(function(){
-        window.location.reload() ;
+      $(".re").click(function() {
+        window.location.reload();
       });
 
       $.ajax({
@@ -51,7 +45,7 @@
             if (count <= mal_p) {
               var tbody = $("<tbody></tbody>");
               $('table').append(tbody);
-              $("tbody:last").addClass("con_tr"+count);
+              $("tbody:last").addClass("con_tr" + count);
 
               if (count === mal_p) {
                 $(".next").css("display", "none");
@@ -63,7 +57,7 @@
                   $(".con_tr" + count).html($(data).find("tbody > tr"))
                   $("td > a").click(function(e) {
                     e.preventDefault();
-                    var url = "http://range-ex.com"+$(this).attr('href');
+                    var url = "http://range-ex.com" + $(this).attr('href');
 
                     window.localStorage.setItem("result", url);
                     window.location.href = "page.html";
@@ -82,7 +76,7 @@
 
           $("td > a").click(function(e) {
             e.preventDefault();
-            var url = "http://range-ex.com"+$(this).attr('href');
+            var url = "http://range-ex.com" + $(this).attr('href');
             console.log(url); //hoge.html
             window.localStorage.setItem("result", url);
             window.location.href = "page.html";

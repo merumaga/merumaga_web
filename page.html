@@ -3,7 +3,7 @@
  <head>
   <meta charset="utf-8">
   <title>expa</title>
-	<link rel="stylesheet" href="css/style.css"type="text/css">
+    <link rel="stylesheet" href="css/style.css"type="text/css">
  </head>
  <body>
   <h1></h1>
@@ -29,7 +29,8 @@
 	<script>
 
 $(function() {
-
+var w = $(window).width();
+$(".back").css("width",w);
   var number = window.localStorage.getItem("result");
 		$.ajax({
 			url: number,

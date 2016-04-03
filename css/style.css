@@ -75,14 +75,11 @@ tr td {
 .back{
   position: fixed;
   bottom: 0;
-  left:0;
-  right: 0;
-  width: 100%;
+  display: block;
+  width: 100px;
   height: 50px;
   color: white;
   text-align: center;
-  margin: 0 auto;
-  display: block;
   line-height: 50px;
   background-color: rgb(172,172,172);
 }

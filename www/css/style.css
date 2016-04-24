@@ -27,13 +27,14 @@ a{
   text-decoration: none;
   color: black;
 }
-td a:visited{
+a:visited{
   color: rgb(185, 185, 185);
 }
 h1{
-  text-align: center;
-  padding: 20px 0 10px 0;
-  font-size: 24px;
+   text-align: center !important;
+ 
+  font-size: 18px;
+  
 }
 td {
   display: block;
@@ -62,7 +63,7 @@ tr td {
 .next,.re{
   display: block;
   margin: 0 auto ;
-  width: 100px;
+  
 
   color: white;
   text-align: center;
@@ -83,3 +84,4 @@ tr td {
   line-height: 50px;
   background-color: rgb(172,172,172);
 }
+
